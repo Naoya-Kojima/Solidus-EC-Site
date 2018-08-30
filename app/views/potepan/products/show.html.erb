@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <% provide(:title, "Single Product")%>
+
+    <!-- SITE TITTLE -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Single Product - BIGBAG Store</title>
+    
+    <!-- PLUGINS CSS STYLE -->
+
+    <!-- GOOGLE FONT -->
+    <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Oxygen:400,300,700', :media => "all" %>
+
+    <!-- CUSTOM CSS -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
 
     <div class="main-wrapper">
-    
 
       <!-- LIGHT SECTION -->
       <section class="lightSection clearfix pageHeader">
@@ -75,9 +90,9 @@
                     <li><a href="product_grid_left_sidebar.html"><i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</a></li>
                     <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
                   </ul>
-                  <h2>Pellentesque non risus quis tellus</h2>
-                  <h3>149円</h3>
-                  <p>Mauris lobortis augue ex, ut faucibus nisi mollis ac. Sed volutpat scelerisque ex ut ullamcorper. Cras at velit quis sapien dapibus laoreet a id odio. Sed sit amet accumsan ante, eu congue metus. Aenean eros tortor, cursus quis feugiat sed, vestibulum vel purus. Etiam aliquam turpis quis blandit finibus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec porttitor placerat lectus, facilisis ornare leo tincidunt vel. Duis rutrum felis felis, eget malesuada massa tincidunt a.</p>
+                  <h2>Product Name</h2>
+                  <h3>2000円</h3>
+                   <p>description</p> 
                   <span class="quick-drop">
                     <select name="guiest_id3" id="guiest_id3" class="select-drop">
                       <option value="0">S</option>
