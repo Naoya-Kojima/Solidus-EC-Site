@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :potepan do
+    get 'products/show'
+  end
+
   get 'products/show'
 
   # This line mounts Solidus's routes at the root of your application.
