@@ -3,18 +3,15 @@
   <head>
     <% provide(:title, "Single Product")%>
   </head>
-
   <body>
-    
     <div class="main-wrapper">
-
       <!-- LIGHT SECTION -->
       <section class="lightSection clearfix pageHeader">
         <div class="container">
           <div class="row">
             <div class="col-xs-6">
               <div class="page-title">
-                <h2>Single Product</h2>
+                <h2><%= @product.name %></h2>
               </div>
             </div>
             <div class="col-xs-6">
@@ -22,13 +19,12 @@
                 <li>
                   <a href="index.html">Home</a>
                 </li>
-                <li class="active">Single Product</li>
+                <li class="active"><%= @product.name %></li>
               </ol>
             </div>
           </div>
         </div>
       </section>
-
       <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix">
         <div class="container">
@@ -38,13 +34,21 @@
                 <div class="media-left productSlider">
                   <div id="carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <%= render partial: 'image' %>
+                      <% @images.map.with_index do |image,i| %>
+                        <div class="item <%= 'active'if i.zero? %>" data-thumb= "<%= i %>" >
+                          <%= image_tag image.attachment.url(:large)%>
+                          </div>
+                      <% end %>             
                     </div>
                   </div>
                   <div class="clearfix">
                     <div id="thumbcarousel" class="carousel slide" data-interval="false">
                       <div class="carousel-inner">
-                        <%= render partial: 'thumbnail' %>
+                        <% @product.images.map.with_index do | image, i | %>
+                          <div data-target= "#carousel" data-slide-to= "<%= i %>" class= "thumb">
+                          <%= image_tag(image.attachment.url(:product)) %>
+                          </div>
+                        <% end %>                          
                       </div>
                       <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
                         <span class="glyphicon glyphicon-chevron-left"></span>
@@ -62,7 +66,7 @@
                   </ul>
                   <h2><%= @product.name %></h2>
                   <h3><%= @product.display_price %></h3>
-                   <p><%= product_description(@product) rescue Spree.t(:product_has_no_description) %></p> 
+                    <p><%= product_description(@product) rescue Spree.t(:product_has_no_description) %></p> 
                   <span class="quick-drop">
                     <select name="guiest_id3" id="guiest_id3" class="select-drop">
                       <option value="0">S</option>
@@ -133,8 +137,8 @@
                   </div>
                 </div>
                 <div class="productCaption clearfix">
-                 <h5>Nike Sportswear</h5>
-                 <h3>199円</h3>
+                  <h5>Nike Sportswear</h5>
+                  <h3>199円</h3>
                 </div>
               </div>
             </div>
@@ -151,8 +155,8 @@
                   </div>
                 </div>
                 <div class="productCaption clearfix">
-                 <h5>Dip Dyed Sweater</h5>
-                 <h3>249円</h3>
+                  <h5>Dip Dyed Sweater</h5>
+                  <h3>249円</h3>
                 </div>
               </div>
             </div>
@@ -169,8 +173,8 @@
                   </div>
                 </div>
                 <div class="productCaption clearfix">
-                 <h5>Scarf Ring Corner</h5>
-                 <h3>179円</h3>
+                  <h5>Scarf Ring Corner</h5>
+                  <h3>179円</h3>
                 </div>
               </div>
             </div>
@@ -187,17 +191,15 @@
                   </div>
                 </div>
                 <div class="productCaption clearfix">
-                 <h5>Sun Buddies</h5>
-                 <h3>149円</h3>
+                  <h5>Sun Buddies</h5>
+                  <h3>149円</h3>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- FOOTER -->
-
       <!-- COPY RIGHT -->
     </div>
       <!-- MODAL -->

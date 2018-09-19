@@ -1,3 +1,10 @@
-{"bracketPairColorizer.timeOut"
-"bracketPairColorizer.forceUniqueOpeningColor"
+{
+  "bracketPairColorizer.timeOut"
+  "bracketPairColorizer.forceUniqueOpeningColor"
+  "editor.formatOnPaste": true, // ペースト時に自動でフォーマット
+  "editor.formatOnSave": true, // ファイル保存時に自動でフォーマット
+  "editor.formatOnType": true, // 入力した行を自動でフォーマット
+  "html.format.contentUnformatted": "pre, code, textarea, title, h1, h2, h3, h4, h5, h6, p", // タグ内の記述はフォーマットしない
+  "html.format.extraLiners": "", // head, body, /html タグの前に改行を入れない
+  "html.format.unformatted": null, // フレージング・コンテンツ（旧インライン要素のようなタグ）はフォーマットしない
 }
