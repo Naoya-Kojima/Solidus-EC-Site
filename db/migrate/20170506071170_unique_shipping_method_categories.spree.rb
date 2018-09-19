@@ -2,7 +2,7 @@
 class UniqueShippingMethodCategories < ActiveRecord::Migration[4.2]
   def change
     klass   = Spree::ShippingMethodCategory
-    columns = %w[shipping_category_id shipping_method_id]
+    columns = %w(shipping_category_id shipping_method_id)
 
     say "Find duplicate #{klass} records"
     duplicates = klass.

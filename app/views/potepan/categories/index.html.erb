@@ -9,8 +9,28 @@
     <div class="main-wrapper">
 
       <!-- LIGHT SECTION -->
-      <%= render partial: 'light_section_top' %>
-
+      <section class="lightSection clearfix pageHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="page-title">
+                <h2>All Products</h2>
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <ol class="breadcrumb pull-right">
+                <li>
+                  <%= link_to 'Home', potepan_root_path %>
+                </li>
+                <li>
+                  <a href="#">shop</a>
+                </li>
+                <li class="active">All Products</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix productsContent">
         <div class="container">
@@ -37,6 +57,7 @@
                   </div>
                 </div>
               </div>
+              <%= render partial: 'product_box' %>
             </div>
           </div>
         </div>
