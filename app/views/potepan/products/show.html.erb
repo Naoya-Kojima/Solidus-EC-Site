@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <% provide(:title, "Single Product")%>
-  </head>
+<% provide(:title, "Single Product")%>
   <body>
     <div class="main-wrapper">
       <!-- LIGHT SECTION -->
@@ -44,7 +40,7 @@
                   <div class="clearfix">
                     <div id="thumbcarousel" class="carousel slide" data-interval="false">
                       <div class="carousel-inner">
-                        <% @product.images.map.with_index do | image, i | %>
+                        <% @images.map.with_index do |image,i| %>
                           <div data-target= "#carousel" data-slide-to= "<%= i %>" class= "thumb">
                           <%= image_tag(image.attachment.url(:product)) %>
                           </div>
@@ -204,4 +200,3 @@
     </div>
       <!-- MODAL -->
   </body>
-</html>
