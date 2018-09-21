@@ -1,3 +1,4 @@
+# rubocop:disable all
 module ApplicationHelper
   def full_title(page_title = '')
     base_title = "BIGBAG Store"
@@ -8,3 +9,4 @@ module ApplicationHelper
     end
   end
 end
+# rubocop:enable all
