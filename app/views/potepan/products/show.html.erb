@@ -30,20 +30,22 @@
                 <div class="media-left productSlider">
                   <div id="carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
-                      <% @images.map.with_index do |image,i| %>
+                      <% @images.map.with_index do |image,i| if (image && i).present? %>
                         <div class="item <%= 'active'if i.zero? %>" data-thumb= "<%= i %>" >
-                          <%= image_tag image.attachment.url(:large)%>
+                          <%= image_tag(image.attachment.url(:large)) %>
                         </div>
+                        <% end %> 
                       <% end %>
                     </div>
                   </div>
                   <div class="clearfix">
                     <div id="thumbcarousel" class="carousel slide" data-interval="false">
                       <div class="carousel-inner">
-                        <% @images.map.with_index do |image,i| %>
+                        <% @images.map.with_index do |image,i| if (image && i).present? %>
                           <div data-target= "#carousel" data-slide-to= "<%= i %>" class= "thumb">
-                          <%= image_tag(image.attachment.url(:product)) %>
+                            <%= image_tag(image.attachment.url(:product)) %>
                           </div>
+                          <% end %>
                         <% end %>                          
                       </div>
                       <a class="left carousel-control" href="#thumbcarousel" role="button" data-slide="prev">
@@ -60,8 +62,8 @@
                     <li><a href="product_grid_left_sidebar.html"><i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</a></li>
                     <!-- <li><a href="#"><i class="fa fa-plus" aria-hidden="true"></i>Share This</a></li> -->
                   </ul>
-                  <h2><%= @product.name %></h2>
-                  <h3><%= @product.display_price %></h3>
+                    <h2><%= @product.name %></h2>
+                    <h3><%= @product.display_price %></h3>
                     <p><%= @product.description rescue Spree.t(:product_has_no_description) %></p> 
                   <span class="quick-drop">
                     <select name="guiest_id3" id="guiest_id3" class="select-drop">
