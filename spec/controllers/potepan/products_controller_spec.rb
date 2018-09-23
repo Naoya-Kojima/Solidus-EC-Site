@@ -7,7 +7,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
     before do
       get :show, params: { id: product.id }
     end
-    
+
     it "returns http success" do
       expect(response).to have_http_status(:success)
     end
