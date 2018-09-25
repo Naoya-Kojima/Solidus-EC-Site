@@ -4,12 +4,10 @@ class Potepan::CategoriesController < ApplicationController
   end
 
   def show
-    #@products = Spree::Product.all
+    # @products = Spree::Product.all
     @product = Spree::Product.find(params[:id])
-    #@taxon = Spree::Taxons.find(params[:id])
+    # @taxon = Spree::Taxons.find(params[:id])
     @taxon = Spree::Taxon.find(params[:id]) if params[:id]
     @taxonomies = Spree::Taxonomy.includes(root: :children)
   end
-
-  
 end
