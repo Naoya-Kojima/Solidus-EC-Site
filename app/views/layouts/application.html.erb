@@ -2,26 +2,16 @@
 <html>
   <head>
     <!-- SITE TITTLE -->
-    <%= render 'layouts/title' %>
-    
-    <%= csrf_meta_tags %>
-    <!-- PLUGINS CSS STYLE -->
-    <%= stylesheet_link_tag    'application', media: 'all' %>
-    <%= javascript_include_tag 'application' %>
-    <!-- GOOGLE FONT -->
-    <%= stylesheet_link_tag "application", 'https://fonts.googleapis.com/css?family=Oxygen:400,300,700', :media => "all" %>
-    <!-- CUSTOM CSS -->
-    <%= render 'layouts/customcss'%>
-
+    <%= render 'layouts/head' %>
     <%= render 'layouts/shim' %>
   </head>
 
   <body>
-      <%= render 'layouts/header' %>
+    <%= render 'layouts/header' %>
     <%= yield %>
-      <%= render 'layouts/footer' %>
-      <%= render 'layouts/copyright' %>
-      <%= render 'layouts/modal' %>
-      
+    <%= render 'layouts/footer' %>
+    <%= render 'layouts/copyright' %>
+    <%= render 'layouts/modal' %>
+    <%= javascript_include_tag 'application' %> 
   </body>
 </html>

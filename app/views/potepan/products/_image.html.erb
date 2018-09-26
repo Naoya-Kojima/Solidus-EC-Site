@@ -1,5 +1,6 @@
-<% @product.images.map.with_index do |image,i| %>
-  <div class="item <% if i.zero? %> active <% end %>" data-thumb= "<%= i %>" >
+<% images.map.with_index do |image,i| if (image && i).present? %>
+  <div class="item <%= 'active'if i.zero? %>" data-thumb= "<%= i %>" >
     <%= image_tag(image.attachment.url(:large)) %>
   </div>
+  <% end %> 
 <% end %>

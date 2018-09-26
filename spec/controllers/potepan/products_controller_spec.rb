@@ -1,10 +1,23 @@
 require 'rails_helper'
 
 RSpec.describe Potepan::ProductsController, type: :controller do
-  describe "GET #show" do
+  describe 'GET #show' do
+    let(:product) { create(:product) }
+
+    before do
+      get :show, params: { id: product.id }
+    end
+
     it "returns http success" do
-      get :show
       expect(response).to have_http_status(:success)
+    end
+
+    it "renders show template" do
+      expect(response).to render_template :show
+    end
+
+    it "assigns @article" do
+      expect(assigns(:product)).to eq product
     end
   end
 end

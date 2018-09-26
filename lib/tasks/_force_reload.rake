@@ -1,5 +1,5 @@
 require 'generators/spree/install/install_generator.rb'
-
+# rubocop:disable all
 module AssetSetupTask
   extend Rake::DSL
   extend self
@@ -132,3 +132,4 @@ module AssetSetupTask
     end
   end
 end
+# rubocop:enable all
