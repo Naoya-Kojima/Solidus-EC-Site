@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- SITE TITTLE -->
-    <%= render 'layouts/head' %>
-    <%= render 'layouts/shim' %>
-  </head>
 
-  <body>
+<head>
+  <!-- SITE TITTLE -->
+  <%= render 'layouts/head' %>
+  <%= render 'layouts/shim' %>
+</head>
+
+<body>
+  <div class="main-wrapper">
     <%= render 'layouts/header' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= render 'layouts/copyright' %>
-    <%= render 'layouts/modal' %>
-    <%= javascript_include_tag 'application' %> 
-  </body>
+  </div>
+  <%= render 'layouts/modal' %>
+  <%= javascript_include_tag 'application' %>
+</body>
+
 </html>

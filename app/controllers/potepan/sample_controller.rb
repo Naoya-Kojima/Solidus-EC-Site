@@ -1,6 +1,6 @@
 class Potepan::SampleController < ApplicationController
   def index
-    render layout: false
+    render :layout => false
   end
 
   def product_grid_left_sidebar

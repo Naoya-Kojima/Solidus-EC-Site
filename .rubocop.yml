@@ -9,6 +9,8 @@ AllCops:
     - db/schema.rb
     - db/migrate/*
     - vendor/**/*
+    - lib/tasks/*
+    - config/initializers/*
 
 # "Missing top-level class documentation comment."を無効
 Style/Documentation:
