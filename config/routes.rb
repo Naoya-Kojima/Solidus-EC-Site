@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get :about_us,                  to: 'sample#about_us'
     get :tokushoho,                 to: 'sample#tokushoho'
     get :privacy_policy,            to: 'sample#privacy_policy'
-    get 'categories/index',         to: 'categories#index'
+    # get 'categories/index',         to: 'categories#index'
     resources :products,          only: [:show]
     resources :categories,        only: [:index, :show]
   end
