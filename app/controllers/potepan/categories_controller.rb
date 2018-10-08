@@ -1,11 +1,11 @@
 class Potepan::CategoriesController < ApplicationController
-  def index
-    @products = Spree::Product.all
-  end
-
   def show
     @taxon = Spree::Taxon.find(params[:id])
+    @taxonomies = Spree::Taxonomy.includes(:taxons)
     @products = @taxon.products
-    @taxonomies = Spree::Taxonomy.includes(:root)
+    @taxons = @taxon.leaves
+    #@taxonomies = @taxon.taxonomy_id
+    #@taxons = @taxon.leaves
+    #@taxon_products = @taxons.ids.to_a
   end
 end
