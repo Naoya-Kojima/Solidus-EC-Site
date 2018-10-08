@@ -1,15 +1,18 @@
 inherit_from:
+  - .rubocop_todo.yml
   - .rubocop_airbnb.yml
+
+Rails:
+  Enabled: true
 
 AllCops:
   TargetRubyVersion: 2.4.1
   Exclude:
-    - bin/*
-    - db/schema.rb
-    - db/migrate/*
     - vendor/**/*
-    - lib/tasks/*
-    - config/initializers/*
+    - bin/*
+    - db/**/*
+    - config/**/*
+    - Gemfile
 
 # "Missing top-level class documentation comment."を無効
 Style/Documentation:
@@ -21,4 +24,11 @@ Style/StringLiterals:
 
 # "Line is too long"を無効
 Metrics/LineLength:
-  Enabled: false  
+  Enabled: false
+
+# option 等、明示的にハッシュにした方が分かりやすい場合もある
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+Airbnb/OptArgParameters:
+  Enabled: false
