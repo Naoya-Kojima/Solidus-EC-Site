@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
     let(:taxon) { create(:taxon) }
+    let!(:products) do
+      FactoryGirl.create_list(:product, 3) do |product|
+      product.taxons << taxon
+      end
+    end
 
     before do
       get :show, params: { id: taxon.id }
@@ -18,6 +23,10 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
 
     it "assigns @taxon" do
       expect(assigns(:taxon)).to eq taxon
+    end
+
+    it "assigns @products" do
+      expect(assigns(:products)).to match products
     end
   end
 end

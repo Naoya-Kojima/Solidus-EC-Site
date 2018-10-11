@@ -4,6 +4,7 @@ class Potepan::CategoriesController < ApplicationController
     #@taxonomies = Spree::Taxonomy.includes(:taxons)
     #@products = @taxon.products
     @products = Spree::Product.includes(:taxons).in_taxon(@taxon)
+    #@pc = Spree::Product.in_taxon(@taxon).count(distinct: true)
     #@taxons = @taxon.leaves
     #@products_conut = Spree::Product.in_taxon(@taxon).count
     #@taxonomies = @taxon.taxonomy_id
