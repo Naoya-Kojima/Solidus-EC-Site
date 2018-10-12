@@ -1,6 +1,5 @@
-<% images.map.with_index do |image,i| if (image && i).present? %>
-<div data-target="#carousel" data-slide-to="<%= i %>" class="thumb">
-  <%= image_tag(image.attachment.url(:product)) %>
-</div>
-<% end %>
+<% images.each_with_index do |image,i| %>
+  <div data-target="#carousel" data-slide-to="<%= i %>" class="thumb">
+    <%= image_tag(image.attachment.url(:product)) %>
+  </div>
 <% end %>
