@@ -5,8 +5,17 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-4 col-xs-12 sideBar">
-        <%= render partial: 'products_categories', locals: { taxonomies: @taxonomies } %>
-        <%= render partial: 'search_filter' %>
+        <div class="panel panel-default">
+          <div class="panel-heading">商品カテゴリー</div>
+          <div class="panel-body">
+            <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
+              <ul class="nav navbar-nav side-nav">
+                <%= render partial: 'products_categories', collection: @taxonomies, as: :taxonomy %>
+              </ul>
+            </div>
+          </div>
+        </div>
+          <%= render partial: 'search_filter' %>
       </div>
       <div class="col-md-9 col-sm-8 col-xs-12">
         <%= render partial: 'sorting_filter' %>
