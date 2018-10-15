@@ -52,7 +52,7 @@
           <div class="media-body">
             <ul class="list-inline">
               <li>
-                <%= link_to "/potepan/categories/#{@product.taxon_ids[0]}" do %>
+                <%= link_to "/potepan/categories/#{@product.taxon_ids.first}" do %>
                   <i class="fa fa-reply" aria-hidden="true"></i>一覧ページへ戻る</a>
                 <% end %>
               </li>
