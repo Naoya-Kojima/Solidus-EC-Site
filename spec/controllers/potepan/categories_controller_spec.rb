@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
     let(:taxon) { create(:taxon) }
-    let(:taxonomies) { Spree::Taxonomy.includes(:taxons) }
     let!(:products) do
       FactoryGirl.create_list(:product, 5) do |product|
         product.taxons << taxon
@@ -24,10 +23,6 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
 
     it "assigns @taxon" do
       expect(assigns(:taxon)).to eq taxon
-    end
-
-    it "assigns @taxonomies" do
-      expect(assigns(:taxonomies)).to eq taxonomies
     end
 
     it "assigns @products" do
