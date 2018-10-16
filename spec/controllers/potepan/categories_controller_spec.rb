@@ -4,7 +4,7 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
     let(:taxon) { create(:taxon) }
     let!(:products) do
-      FactoryGirl.create_list(:product, 3) do |product|
+      FactoryGirl.create_list(:product, 5) do |product|
         product.taxons << taxon
       end
     end
@@ -26,7 +26,7 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
     end
 
     it "assigns @products" do
-      expect(assigns(:products)).to match_array products
+      expect(assigns(:products)).to eq products
     end
   end
 end

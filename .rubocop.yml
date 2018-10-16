@@ -26,7 +26,7 @@ Style/StringLiterals:
 Metrics/LineLength:
   Enabled: false
 
-# option 等、明示的にハッシュにした方が分かりやすい場合もある
+# option 等、明示的にハッシュでも可
 Style/BracesAroundHashParameters:
   Enabled: false
 
