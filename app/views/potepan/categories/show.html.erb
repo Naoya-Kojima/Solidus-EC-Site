@@ -10,7 +10,7 @@
           <div class="panel-body">
             <div class="collapse navbar-collapse navbar-ex1-collapse navbar-side-collapse">
               <ul class="nav navbar-nav side-nav">
-                <%= render partial: 'products_categories_sidebar', collection: @taxonomies, as: :taxonomy %>
+                <%= render partial: 'product_category_sidebar', collection: @taxonomies, as: :taxonomy %>
               </ul>
             </div>
           </div>
@@ -20,7 +20,7 @@
       <div class="col-md-9 col-sm-8 col-xs-12">
         <%= render partial: 'sorting_filter' %>
         <div class="row">
-          <%= render partial: 'products', collection: @products, as: :product %>
+          <%= render partial: 'product', collection: @products %>
         </div>
       </div>
     </div>
