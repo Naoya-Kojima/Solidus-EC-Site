@@ -1,7 +1,7 @@
 <div class="col-md-3 col-sm-6 col-xs-12">
   <div class="productBox">
     <div class="productImage clearfix">
-      <%= image_tag(product.display_image.attachment.url(:product)) %>
+      <%= image_tag(related_product.display_image.attachment.url(:product)) %>
       <div class="productMasking">
         <ul class="list-inline btn-group" role="group">
           <li><a data-toggle="modal" href=".login-modal" class="btn btn-default"><i class="fa fa-heart"></i></a></li>
@@ -11,12 +11,12 @@
       </div>
     </div>
     <div class="productCaption clearfix">
-      <%= link_to potepan_product_path(product.id) do %>
+      <%= link_to potepan_product_path(related_product.id) do %>
         <h5>
-          <%= product.name %>
+          <%= related_product.name %>
         </h5>
         <h3>
-          <%= product.display_price %>
+          <%= related_product.display_price %>
         </h3>
       <% end %>
     </div>
