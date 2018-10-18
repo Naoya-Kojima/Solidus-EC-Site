@@ -5,6 +5,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
 
   describe 'GET #show' do
     let(:product) { create(:product) }
+    let(:taxon) { create(:taxon) }
     let(:base_title) { 'BIGBAG Store' }
 
     before do
@@ -18,6 +19,11 @@ RSpec.describe Potepan::ProductsController, type: :controller do
 
     it "renders show template" do
       expect(response).to render_template :show
+    end
+
+    it "assigns @taxon" do
+      get :show, params: { id: product.taxon_ids.first }
+      expect(assigns(:taxon)).to eq taxon
     end
 
     it "assigns @product" do
