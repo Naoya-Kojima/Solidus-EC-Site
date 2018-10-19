@@ -1,13 +1,16 @@
 require 'rails_helper'
 
 RSpec.describe Potepan::ProductsController, type: :controller do
-  render_views
-
   describe 'GET #show' do
-    let(:product) { create(:product) }
+    let(:taxon) { create(:taxon) }
+    let(:products_list) do
+      create_list(:product, 5) do |product|
+        product.taxons << taxon
+      end
+    end
 
     before do
-      get :show, params: { id: product.id }
+      get :show, params: { id: products_list.first.id }
     end
 
     it "returns http success" do
@@ -19,12 +22,11 @@ RSpec.describe Potepan::ProductsController, type: :controller do
     end
 
     it "assigns @taxon" do
-      get :show, params: { id: product.taxon_ids.first }
       expect(assigns(:taxon)).to eq taxon
     end
 
     it "assigns @product" do
-      expect(assigns(:product)).to eq product
+      expect(assigns(:related_products)).to eq products_list
     end
   end
 end
