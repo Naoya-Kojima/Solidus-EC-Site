@@ -15,6 +15,5 @@ RSpec.describe ApplicationHelper, type: :helper do
         expect(full_title('PageTitle')).to eq('PageTitle - BIGBAG Store')
       end
     end
-
   end
 end
