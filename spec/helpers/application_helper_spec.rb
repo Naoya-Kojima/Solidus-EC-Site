@@ -11,8 +11,8 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
 
     context "when page_title is exist" do
-      it "display pagetitle + basetitle" do
-        expect(full_title('PageTitle')).to eq('PageTitle - BIGBAG Store')
+      it "display page_title + base_title" do
+        expect(full_title('page_title')).to eq('page_title - BIGBAG Store')
       end
     end
   end
