@@ -5,11 +5,6 @@ RSpec.describe Potepan::ProductsController, type: :controller do
 
   describe 'GET #show' do
     let(:product) { create(:product) }
-<<<<<<< HEAD
-    let(:taxon) { create(:taxon) }
-    let(:base_title) { 'BIGBAG Store' }
-=======
->>>>>>> kadai3
 
     before do
       get :show, params: { id: product.id }
