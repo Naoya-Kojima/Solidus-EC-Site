@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
     let(:taxon) { create(:taxon) }
-    let!(:products) do
-      FactoryGirl.create_list(:product, 5) do |product|
+    let(:products) do
+      create_list(:product, 5) do |product|
         product.taxons << taxon
       end
     end
