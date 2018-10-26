@@ -44,6 +44,7 @@ group :development, :test do
   gem 'pry-byebug'
   gem 'rails-erd'
   gem 'annotate'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -51,8 +52,10 @@ group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rubocop-airbnb'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'spring-commands-rspec'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

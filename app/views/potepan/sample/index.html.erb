@@ -1,37 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
   <head>
-
     <!-- SITE TITTLE -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>BIGBAG Store</title>
-
-    <!-- PLUGINS CSS STYLE -->
-    <%= stylesheet_link_tag "application", :media => "all" %>
-
-    <!-- GOOGLE FONT -->
-    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Oxygen:400,300,700', :media => "all" %>
-
-    <!-- CUSTOM CSS -->
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <%= render 'layouts/head' %>
+    <%= render 'layouts/shim' %>
   </head>
 
   <body>
-
     <div class="main-wrapper">
-
-      <!-- HEADER -->
       <div class="header clearfix">
-
         <!-- TOPBAR -->
         <div class="topBar">
           <div class="container">
@@ -40,53 +18,54 @@
                 <ul class="list-inline">
                   <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                   <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <!-- <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                   <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li> -->
+                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
                 </ul>
               </div>
               <div class="col-md-6 col-xs-12">
                 <ul class="list-inline pull-right">
-                 <!--  <li><span><a data-toggle="modal" href='.login-modal'>ログイン</a><small>or</small><a data-toggle="modal" href='#signup'>新規登録</a></span></li> -->
+                  <li><span><a data-toggle="modal" href='#login'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create
+                        an account</a></span></li>
                   <li class="dropdown searchBox">
-                    <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
                       <li>
                         <span class="input-group">
                           <input type="text" class="form-control" placeholder="Search…" aria-describedby="basic-addon2">
-                          <span class="input-group-addon" id="basic-addon2">検索</span>
+                          <span class="input-group-addon" id="basic-addon2">Search</span>
                         </span>
                       </li>
                     </ul>
                   </li>
                   <li class="dropdown">
-                    <a href="cart_page.html" class="dropdown-toggle" data-toggle="dropdown disabled"><i class="fa fa-shopping-cart"></i>¥0</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-shopping-cart"></i>$0</a>
                     <ul class="dropdown-menu dropdown-menu-right">
-                      <li>ショッピングカート</li>
+                      <li>Item(s) in your cart</li>
                       <li>
-                        <a href="single_product.html">
+                        <a href="#">
                           <div class="media">
-                            <%= image_tag("home/cart-items/cart-item-01.jpg", :class => "media-left media-object", :alt => "cart-Image") %>
+                            <%= image_tag("img/home/cart-items/cart-item-01.jpg", :class => "media-left media-object", :alt => "cart-Image") %>
                             <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X 199円</span></h5>
+                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
                             </div>
                           </div>
                         </a>
                       </li>
                       <li>
-                        <a href="single_product.html">
+                        <a href="#">
                           <div class="media">
-                            <%= image_tag("home/cart-items/cart-item-01.jpg", :class => "media-left media-object", :alt => "cart-Image") %>
+                            <%= image_tag("img/home/cart-items/cart-item-01.jpg", :class => "media-left media-object", :alt => "cart-Image") %>
                             <div class="media-body">
-                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X 199円</span></h5>
+                              <h5 class="media-heading">INCIDIDUNT UT <br><span>2 X $199</span></h5>
                             </div>
                           </div>
                         </a>
                       </li>
                       <li>
                         <div class="btn-group" role="group" aria-label="...">
-                          <button type="button" class="btn btn-default" onclick="location.href='cart_page.html';">カートを見る</button>
-                          <button type="button" class="btn btn-default" onclick="location.href='checkout_step_1.html';">購入する</button>
+                          <button type="button" class="btn btn-default">Shopping Cart</button>
+                          <button type="button" class="btn btn-default">Checkout</button>
                         </div>
                       </li>
                     </ul>
@@ -96,7 +75,6 @@
             </div>
           </div>
         </div>
-
         <!-- NAVBAR -->
         <nav class="navbar navbar-main navbar-default" role="navigation">
           <div class="container">
@@ -108,23 +86,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="javascript:void(0)"><%= image_tag("logo.png") %></a>
+              <a class="navbar-brand" href="javascript:void(0)">
+                <%= image_tag("logo.png") %></a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="javascript:void(0)">Home</a></li>
                 <li class="dropdown megaDropMenu">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="300" data-close-others="true" aria-expanded="false">Shop</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
+                    data-delay="300" data-close-others="true" aria-expanded="false">Shop</a>
                   <ul class="dropdown-menu row">
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
-                       <li>レディース</li>
-                       <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                       <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">靴</a></li>
+                        <li>レディース</li>
+                        <li><a href="product_grid_left_sidebar.html">トップス</a></li>
+                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
+                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
+                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
                         <!-- <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
                         <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
                         <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
@@ -138,48 +117,50 @@
                         <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li> -->
                         <li class="listHeading">メンズ</li>
                         <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                       <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">靴</a></li>
+                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
+                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
+                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
                       </ul>
                     </li>
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
                         <li>キッズ</li>
                         <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                       <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                       <li><a href="product_grid_left_sidebar.html">靴</a></li>
+                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
+                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
+                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
                       </ul>
                     </li>
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
                         <li>アクセサリー</li>
                         <li><a href="product_grid_left_sidebar.html">モバイルケース・アクセサリー</a></li>
-                          <li><a href="product_grid_left_sidebar.html">財布・革小物</a></li>
-                           <li><a href="product_grid_left_sidebar.html">腕時計</a></li>
-                            <li><a href="product_grid_left_sidebar.html">帽子</a></li>
+                        <li><a href="product_grid_left_sidebar.html">財布・革小物</a></li>
+                        <li><a href="product_grid_left_sidebar.html">腕時計</a></li>
+                        <li><a href="product_grid_left_sidebar.html">帽子</a></li>
                       </ul>
-                    <!--   <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a> -->
+                      <!--   <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a> -->
                     </li>
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About US</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">About US</a>
                   <ul class="dropdown-menu dropdown-menu-left">
                     <li><a href="about_us.html">About Us</a></li>
                     <!-- <li><a href="signup.html">Register</a></li>
                     <li><a href="signup-login.html">Register or Login</a></li>
                     <li><a href="login.html">Login</a></li> -->
                     <!-- <li><a href="lost-password.html">Password Recovery</a></li> -->
-                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
                     <!-- <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li> -->
                     <!-- <li><a href="404.html">404 Not Found</a></li> -->
-<!--                     <li><a href="coming-soon.html">Coming Soon</a></li>
- -->                  </ul>
+                    <!--<li><a href="coming-soon.html">Coming Soon</a></li>-->
+                  </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">blog</a>
+                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">blog</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <!-- <li><a href="blog-right-sidebar.html">Right Sidebar</a></li> -->
                     <li><a href="blog_left_sidebar.html">Left Sidebar</a></li>
@@ -189,7 +170,7 @@
                     <li><a href="blog_single_left_sidebar.html">Single Left Sidebar</a></li>
                   </ul>
                 </li>
-               <!--  <li class="dropdown">
+                <!--  <li class="dropdown">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
                   <ul class="dropdown-menu dropdown-menu-right">
                     <li><a href="account-dashboard.html">Dashboard</a></li>
@@ -204,9 +185,7 @@
             </div><!-- /.navbar-collapse -->
           </div>
         </nav>
-
       </div>
-
       <!-- BANNER -->
       <div class="bannercontainer">
         <div class="fullscreenbanner-container">
@@ -215,49 +194,24 @@
               <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 1">
                 <%= image_tag("home/banner-slider/slider-bg.jpg", :alt => "slidebg1", data:{bgposition: "center center", bgfit: "cover" , bgrepeat: "no-repeat"}) %>
                 <div class="slider-caption container">
-                  <div class="tp-caption rs-caption-1 sft start"
-                    data-hoffset="0"
-                    data-x="370"
-                    data-y="54"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-1 sft start" data-hoffset="0" data-x="370" data-y="54" data-speed="800"
+                    data-start="1500" data-easing="Back.easeInOut" data-endspeed="300">
                     <%= image_tag("home/banner-slider/shoe1.png", :alt => "slider-image") %>
                   </div>
 
-                  <div class="tp-caption rs-caption-2 sft"
-                    data-hoffset="0"
-                    data-y="119"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-2 sft" data-hoffset="0" data-y="119" data-speed="800" data-start="2000"
+                    data-easing="Back.easeInOut" data-endspeed="300">
                     Canvas Sneaker
                   </div>
 
-                  <div class="tp-caption rs-caption-3 sft"
-                    data-hoffset="0"
-                    data-y="185"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
+                  <div class="tp-caption rs-caption-3 sft" data-hoffset="0" data-y="185" data-speed="1000" data-start="3000"
+                    data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off">
                     Exclusive to <br>
                     BigBag <br>
                     <small>Spring / Summer 2020</small>
                   </div>
-                  <div class="tp-caption rs-caption-4 sft"
-                    data-hoffset="0"
-                    data-y="320"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
-                    data-captionhidden="off">
+                  <div class="tp-caption rs-caption-4 sft" data-hoffset="0" data-y="320" data-speed="800" data-start="3500"
+                    data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn" data-captionhidden="off">
                     <span class="page-scroll"><a href="single_product.html" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                   </div>
                 </div>
@@ -265,100 +219,52 @@
               <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="1000" data-title="Slide 2">
                 <%= image_tag("home/banner-slider/slider-bg.jpg", :alt => "slidebg", data:{bgposition: "center center", bgfit: "cover" , bgrepeat: "no-repeat"}) %>
                 <div class="slider-caption container captionCenter">
-                  <div class="tp-caption rs-caption-1 sft start captionCenterAlign"
-                    data-x="center"
-                    data-y="228"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-1 sft start captionCenterAlign" data-x="center" data-y="228"
+                    data-speed="800" data-start="1500" data-easing="Back.easeInOut" data-endspeed="300">
                     <%= image_tag("home/banner-slider/shoe2.png", :alt => "slider-image") %>
                   </div>
 
-                  <div class="tp-caption rs-caption-2 sft captionCenterAlign"
-                    data-x="center"
-                    data-y="50"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-2 sft captionCenterAlign" data-x="center" data-y="50" data-speed="800"
+                    data-start="2000" data-easing="Back.easeInOut" data-endspeed="300">
                     Exclusive to BigBag
                   </div>
 
-                  <div class="tp-caption rs-caption-3 sft captionCenterAlign"
-                    data-x="center"
-                    data-y="98"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
+                  <div class="tp-caption rs-caption-3 sft captionCenterAlign" data-x="center" data-y="98" data-speed="1000"
+                    data-start="3000" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn"
                     data-captionhidden="off">
                     Canvas Sneaker
                   </div>
 
-                  <div class="tp-caption rs-caption-4 sft captionCenterAlign"
-                    data-x="center"
-                    data-y="156"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
+                  <div class="tp-caption rs-caption-4 sft captionCenterAlign" data-x="center" data-y="156" data-speed="800"
+                    data-start="3500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn"
                     data-captionhidden="off">
                     <span class="page-scroll"><a href="single_product.html" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                   </div>
                 </div>
               </li>
-              <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700"  data-title="Slide 3">
+              <li data-transition="slidehorizontal" data-slotamount="5" data-masterspeed="700" data-title="Slide 3">
                 <%= image_tag("home/banner-slider/slider-bg.jpg", :alt => "slidebg", data:{bgposition: "center center", bgfit: "cover" , bgrepeat: "no-repeat"}) %>
                 <div class="slider-caption container">
-                  <div class="tp-caption rs-caption-1 sft start"
-                    data-hoffset="0"
-                    data-x="0"
-                    data-y="85"
-                    data-speed="800"
-                    data-start="1500"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-1 sft start" data-hoffset="0" data-x="0" data-y="85" data-speed="800"
+                    data-start="1500" data-easing="Back.easeInOut" data-endspeed="300">
                     <%= image_tag("home/banner-slider/shoe3.png", :alt => "slider-image") %>
                   </div>
 
-                  <div class="tp-caption rs-caption-2 sft "
-                    data-hoffset="0"
-                    data-y="119"
-                    data-x="800"
-                    data-speed="800"
-                    data-start="2000"
-                    data-easing="Back.easeInOut"
-                    data-endspeed="300">
+                  <div class="tp-caption rs-caption-2 sft " data-hoffset="0" data-y="119" data-x="800" data-speed="800"
+                    data-start="2000" data-easing="Back.easeInOut" data-endspeed="300">
                     Canvas Sneaker
                   </div>
 
-                  <div class="tp-caption rs-caption-3 sft"
-                    data-hoffset="0"
-                    data-y="185"
-                    data-x="800"
-                    data-speed="1000"
-                    data-start="3000"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
+                  <div class="tp-caption rs-caption-3 sft" data-hoffset="0" data-y="185" data-x="800" data-speed="1000"
+                    data-start="3000" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn"
                     data-captionhidden="off">
                     Exclusive to <br>
                     BigBag <br>
                     <small>Spring / Summer 2020</small>
                   </div>
 
-                  <div class="tp-caption rs-caption-4 sft"
-                    data-hoffset="0"
-                    data-y="320"
-                    data-x="800"
-                    data-speed="800"
-                    data-start="3500"
-                    data-easing="Power4.easeOut"
-                    data-endspeed="300"
-                    data-endeasing="Power1.easeIn"
+                  <div class="tp-caption rs-caption-4 sft" data-hoffset="0" data-y="320" data-x="800" data-speed="800"
+                    data-start="3500" data-easing="Power4.easeOut" data-endspeed="300" data-endeasing="Power1.easeIn"
                     data-captionhidden="off">
                     <span class="page-scroll"><a href="single_product.html" class="btn primary-btn">Buy Now<i class="glyphicon glyphicon-chevron-right"></i></a></span>
                   </div>
@@ -368,7 +274,6 @@
           </div>
         </div>
       </div>
-
       <!-- MAIN CONTENT SECTION -->
       <section class="mainContent clearfix">
         <div class="container">
@@ -525,7 +430,7 @@
                     <a href="single_product.html">
                       <h5>Suspendisse suscipit</h5>
                     </a>
-                   <h3>149円</h3>
+                    <h3>149円</h3>
                   </div>
                 </div>
                 <div class="slide">
@@ -577,7 +482,8 @@
               <div class="thumbnail">
                 <h5><a href="blog_single_left_sidebar.html">記事タイトル</a></h5>
                 <span class="meta">2016/9/16</span>
-                <a href="blog_single_left_sidebar.html"><%= image_tag("home/articles/articles-01.jpg", :alt => "article-image") %></a>
+                <a href="blog_single_left_sidebar.html">
+                  <%= image_tag("home/articles/articles-01.jpg", :alt => "article-image") %></a>
                 <div class="caption">
                   <p>記事本文（100文字）</p>
                 </div>
@@ -587,7 +493,8 @@
               <div class="thumbnail">
                 <h5><a href="blog_single_left_sidebar.html">記事タイトル</a></h5>
                 <span class="meta">2016/9/16</span>
-                <a href="blog_single_left_sidebar.html"><%= image_tag("home/articles/articles-02.jpg", :alt => "article-image") %></a>
+                <a href="blog_single_left_sidebar.html">
+                  <%= image_tag("home/articles/articles-02.jpg", :alt => "article-image") %></a>
                 <div class="caption">
                   <p>記事本文（100文字）</p>
                 </div>
@@ -597,7 +504,8 @@
               <div class="thumbnail">
                 <h5><a href="blog_single_left_sidebar.html">記事タイトル</a></h5>
                 <span class="meta">2016/9/16</span>
-                <a href="blog_single_left_sidebar.html"><%= image_tag("home/articles/articles-03.jpg", :alt => "article-image") %></a>
+                <a href="blog_single_left_sidebar.html">
+                  <%= image_tag("home/articles/articles-03.jpg", :alt => "article-image") %></a>
                 <div class="caption">
                   <p>記事本文（100文字）</p>
                 </div>
@@ -607,7 +515,8 @@
               <div class="thumbnail">
                 <h5><a href="blog_single_left_sidebar.html">記事タイトル</a></h5>
                 <span class="meta">2016/9/16</span>
-                <a href="blog_single_left_sidebar.html"><%= image_tag("home/articles/articles-04.jpg", :alt => "article-image") %></a>
+                <a href="blog_single_left_sidebar.html">
+                  <%= image_tag("home/articles/articles-04.jpg", :alt => "article-image") %></a>
                 <div class="caption">
                   <p>記事本文（100文字）</p>
                 </div>
@@ -616,7 +525,6 @@
           </div>
         </div>
       </section>
-
       <!-- LIGHT SECTION -->
       <section class="lightSection clearfix">
         <div class="container">
@@ -668,187 +576,11 @@
           </div>
         </div>
       </section>
-
-      <!-- FOOTER -->
-      <div class="footer clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
-                <h5>Accessories</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
-                <h5>BRANDS</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Barbour </a></li>
-                  <li><a href="#">Brioni </a></li>
-                  <li><a href="#">Oliver Spencer</a></li>
-                  <li><a href="#">Belstaff</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
-                <h5>Accessories</h5>
-                <ul class="list-unstyled">
-                  <li><a href="#">Body care </a></li>
-                  <li><a href="#">Chambray </a></li>
-                  <li><a href="#">Floral </a></li>
-                  <li><a href="#">Rejuvination </a></li>
-                  <li><a href="#">Shaving </a></li>
-                  <li><a href="#">Toilette </a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-2 col-xs-12">
-              <div class="footerLink">
-                <h5>Get in Touch</h5>
-                <ul class="list-unstyled">
-                  <li>Call us at (555)-555-5555</li>
-                  <li><a href="mailto:support@iamabdus.com">support@iamabdus.com</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-sm-4 col-xs-12">
-              <div class="newsletter clearfix">
-                <h4>Newsletter</h4>
-                <h3>Sign up now</h3>
-                <p>Enter your email address and get notified about new products. We hate spam!</p>
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="your email address" aria-describedby="basic-addon2">
-                  <a href="#" class="input-group-addon" id="basic-addon2">go <i class="glyphicon glyphicon-chevron-right"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- COPY RIGHT -->
-      <div class="copyRight clearfix">
-        <div class="container">
-          <div class="row">
-            <div class="col-sm-7 col-xs-12">
-              <p>&copy; 2016 Copyright Potepan Store .</p>
-            </div>
-            <div class="col-sm-5 col-xs-12">
-              <ul class="list-inline">
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'layouts/footer' %>
+      <%= render 'layouts/copyright' %>
+      <%= render 'layouts/modal' %>
     </div>
-
-    <!-- LOGIN MODAL -->
-    <div class="modal fade login-modal" id="login" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">ログイン</h3>
-          </div>
-          <div class="modal-body">
-            <form action="login-" method="POST" role="form">
-              <div class="form-group">
-                <label for="login-email">メールアドレス</label>
-                <input type="email" class="form-control" id="login-email">
-              </div>
-              <div class="form-group">
-                <label for="login-password">パスワード</label>
-                <input type="password" class="form-control" id="login-password">
-              </div>
-              <div class="checkbox">
-                <label>
-                  <input type="checkbox"> 記憶しておく
-                </label>
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">ログイン</button>
-              <a href="lost-password.html" class="btn btn-link btn-block">パスワードをお忘れの方</a>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SIGN UP MODAL -->
-    <div class="modal fade" id="signup" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h3 class="modal-title">新規登録</h3>
-          </div>
-          <div class="modal-body">
-            <form action="" method="POST" role="form">
-              <div class="form-group">
-                <label for="signup-email">メールアドレス</label>
-                <input type="email" class="form-control" id="signup-email">
-              </div>
-              <div class="form-group">
-                <label for="signup-password">パスワード</label>
-                <input type="password" class="form-control" id="signup-password">
-              </div>
-              <div class="form-group">
-                <label for="signup-password-confirmation">パスワード（確認用）</label>
-                <input type="password" class="form-control" id="signup-password-confirmation">
-              </div>
-              <button type="submit" class="btn btn-primary btn-block">登録する</button>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PORDUCT QUICK VIEW MODAL -->
-    <div class="modal fade quick-view" tabindex="-1" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <div class="media">
-              <div class="media-left">
-                <%= image_tag("products/quick-view/quick-view-01.jpg", :class => "media-object", :alt => "Image") %>
-              </div>
-              <div class="media-body">
-                <h2>Old Skool Navy</h2>
-                <h3>149円</h3>
-                <p>Classic sneaker from Vans. Cotton canvas and suede upper. Textile lining with heel stabilizer and ankle support. Contrasting laces. Sits on a classic waffle rubber sole.</p>
-                <span class="quick-drop">
-                  <select name="guiest_id3" id="guiest_id3" class="select-drop">
-                    <option value="0">S</option>
-                    <option value="1">M</option>
-                    <option value="2">L</option>
-                    <option value="3">XL</option>
-                  </select>
-                </span>
-                <span class="quick-drop resizeWidth">
-                  <select name="guiest_id4" id="guiest_id4" class="select-drop">
-                    <!-- <option value="0">数</option> -->
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                  </select>
-                </span>
-                <div class="btn-area">
-                  <a href="cart_page.html" class="btn btn-primary btn-block">カートへ入れる <i class="fa fa-angle-right" aria-hidden="true"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <%= javascript_include_tag 'application' %>
   </body>
+
 </html>

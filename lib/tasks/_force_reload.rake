@@ -1,5 +1,5 @@
 require 'generators/spree/install/install_generator.rb'
-
+# rubocop:disable all
 module AssetSetupTask
   extend Rake::DSL
   extend self
@@ -48,64 +48,64 @@ module AssetSetupTask
         images = {
           products[:ror_tote].master => [
             {
-              attachment: image("ror_tote")
+              attachment: image("ror_tote"),
             },
             {
-              attachment: image("ror_tote_back")
-            }
+              attachment: image("ror_tote_back"),
+            },
           ],
           products[:ror_bag].master => [
             {
-              attachment: image("ror_bag")
-            }
+              attachment: image("ror_bag"),
+            },
           ],
           products[:ror_baseball_jersey].master => [
             {
-              attachment: image("ror_baseball")
+              attachment: image("ror_baseball"),
             },
             {
-              attachment: image("ror_baseball_back")
-            }
+              attachment: image("ror_baseball_back"),
+            },
           ],
           products[:ror_jr_spaghetti].master => [
             {
-              attachment: image("ror_jr_spaghetti")
-            }
+              attachment: image("ror_jr_spaghetti"),
+            },
           ],
           products[:ror_mug].master => [
             {
-              attachment: image("ror_mug")
+              attachment: image("ror_mug"),
             },
             {
-              attachment: image("ror_mug_back")
-            }
+              attachment: image("ror_mug_back"),
+            },
           ],
           products[:ror_ringer].master => [
             {
-              attachment: image("ror_ringer")
+              attachment: image("ror_ringer"),
             },
             {
-              attachment: image("ror_ringer_back")
-            }
+              attachment: image("ror_ringer_back"),
+            },
           ],
           products[:ror_stein].master => [
             {
-              attachment: image("ror_stein")
+              attachment: image("ror_stein"),
             },
             {
-              attachment: image("ror_stein_back")
-            }
+              attachment: image("ror_stein_back"),
+            },
           ],
           products[:apache_baseball_jersey].master => [
             {
-              attachment: image("apache_baseball", "png")
-            }
+              attachment: image("apache_baseball", "png"),
+            },
           ],
           products[:ruby_baseball_jersey].master => [
             {
-              attachment: image("ruby_baseball", "png")
-            }
-          ]
+              attachment: image("ruby_baseball", "png"),
+            },
+          ],
         }
 
         products[:ror_baseball_jersey].variants.each do |variant|
@@ -132,3 +132,4 @@ module AssetSetupTask
     end
   end
 end
+# rubocop:enable all
