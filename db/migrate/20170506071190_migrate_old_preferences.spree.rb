@@ -22,7 +22,7 @@ class MigrateOldPreferences < ActiveRecord::Migration[4.2]
 
           # Batch load preferences for this record.
           preferences = Hash[Spree::Preference.where(
-            key: keys.map { |k| cache_key(record, k) }
+            key: keys.map{ |k| cache_key(record, k) }
           ).pluck(:key, :value)]
 
           # Copy preferences to the record.
@@ -43,11 +43,11 @@ class MigrateOldPreferences < ActiveRecord::Migration[4.2]
       ENV["RAILS_CACHE_ID"],
       class_underscore_cache[model.type],
       key,
-      model.id,
+      model.id
     ].compact.join("/")
   end
 
   def class_underscore_cache
-    @class_underscore_cache ||= Hash.new { |h, k| h[k] = k.underscore }
+    @class_underscore_cache ||= Hash.new{ |h, k| h[k] = k.underscore }
   end
 end
