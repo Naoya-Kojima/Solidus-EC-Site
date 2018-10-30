@@ -110,56 +110,56 @@
               <li class="col-sm-3 col-xs-12">
                 <ul class="list-unstyled">
                   <li>Products Grid View</li>
-                    <li>
-                      <%= link_to "Products Sidebar Left", "/potepan/categories/1" %>
-                    </li>
-                    <li>
-                      <%= link_to "Products Sidebar Right", "#" %>
-                    </li>
-                    <li>
-                      <%= link_to "Products 3 Columns V1", "#" %>
-                    </li>
-                    <li>
-                      <%= link_to "Products 3 Columns V2", "#" %>
-                    </li>
-                    <li>
-                      <%= link_to "Products 4 Columns", "#" %>
-                    </li>
+                  <li>
+                    <%= link_to "Products Sidebar Left", potepan_category_path(1) %>
+                  </li>
+                  <li>
+                    <%= link_to "Products Sidebar Right", "#" %>
+                  </li>
+                  <li>
+                    <%= link_to "Products 3 Columns V1", "#" %>
+                  </li>
+                  <li>
+                    <%= link_to "Products 3 Columns V2", "#" %>
+                  </li>
+                  <li>
+                    <%= link_to "Products 4 Columns", "#" %>
+                  </li>
                 </ul>
               </li>
               <li class="col-sm-3 col-xs-12">
                 <ul class="list-unstyled">
                   <li>Products List View</li>
-                    <li>
-                      <%= link_to "Products Sidebar Left", "/potepan/product_list_left_sidebar" %>
-                    </li>
-                    <li>
-                      <%= link_to "Products Sidebar Right", "#" %>
-                    </li>
-                    <li class="listHeading">Others</li>
-                    <li class="active">
-                      <%= link_to 'Single Product', '/potepan/products/1' %>
-                    </li>
-                    <li>
-                      <%= link_to 'Cart Page', '/potepan/cart_page' %>
-                    </li>
+                  <li>
+                    <%= link_to "Products Sidebar Left", potepan_category_path(1) %>
+                  </li>
+                  <li>
+                    <%= link_to "Products Sidebar Right", "#" %>
+                  </li>
+                  <li class="listHeading">Others</li>
+                  <li class="active">
+                    <%= link_to 'Single Product', potepan_product_path(1) %>
+                  </li>
+                  <li>
+                    <%= link_to 'Cart Page', potepan_cart_page_path %>
+                  </li>
                 </ul>
               </li>
               <li class="col-sm-3 col-xs-12">
                 <ul class="list-unstyled">
                   <li>Checkout</li>
-                    <li>
-                      <%= link_to 'Step 1 - Address', '/potepan/checkout_step_1' %>
-                    </li>
-                    <li>
-                      <%= link_to 'Step 2 - Shipping', '/potepan/checkout_step_2' %>
-                    </li>
-                    <li>
-                      <%= link_to 'Step 3 - Payment', '/potepan/checkout_step_3' %>
-                    </li>
-                    <li>
-                      <%= link_to 'Order Complete', '/potepan/checkout_complete' %>
-                    </li>
+                  <li>
+                    <%= link_to 'Step 1 - Address', potepan_checkout_step_1_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'Step 2 - Shipping', potepan_checkout_step_2_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'Step 3 - Payment', potepan_checkout_step_3_path %>
+                  </li>
+                  <li>
+                    <%= link_to 'Order Complete', potepan_checkout_complete_path %>
+                  </li>
                 </ul>
               </li>
               <li class="col-sm-3 col-xs-12">
@@ -173,7 +173,7 @@
               aria-expanded="false">pages</a>
             <ul class="dropdown-menu dropdown-menu-left">
               <li>
-                <%= link_to 'About Us', '/potepan/about_us' %>
+                <%= link_to 'About Us', potepan_about_us_path %>
               </li>
               <li>
                 <%= link_to 'Register', '#' %>
@@ -188,7 +188,7 @@
                 <%= link_to 'Password Recovery', '#' %>
               </li>
               <li>
-                <%= link_to 'Privacy Policy', '/potepan/privacy_policy' %>
+                <%= link_to 'Privacy Policy', potepan_privacy_policy_path %>
               </li>
               <li>
                 <%= link_to 'Terms & Conditions', '#' %>
@@ -206,10 +206,10 @@
               aria-expanded="false">blog</a>
             <ul class="dropdown-menu dropdown-menu-right">
               <li>
-                <%= link_to 'Right Sidebar', '/potepan/blog_right_sidebar' %>
+                <%= link_to 'Right Sidebar', potepan_blog_right_sidebar_path %>
               </li>
               <li>
-                <%= link_to 'Left Sidebar', '/potepan/blog_left_sidebar' %>
+                <%= link_to 'Left Sidebar', potepan_blog_left_sidebar_path %>
               </li>
               <li>
                 <%= link_to 'Full Width', '#' %>
@@ -218,10 +218,10 @@
                 <%= link_to 'Single Post', '#' %>
               </li>
               <li>
-                <%= link_to 'Single Right Sidebar', '/potepan/blog_single_right_sidebar' %>
+                <%= link_to 'Single Right Sidebar', potepan_blog_single_right_sidebar_path %>
               </li>
               <li>
-                <%= link_to 'Single Left Sidebar', '/potepan/blog_single_left_sidebar' %>
+                <%= link_to 'Single Left Sidebar', potepan_blog_single_left_sidebar_path %>
               </li>
             </ul>
           </li>
