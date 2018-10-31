@@ -4,7 +4,7 @@
   <i class="fa fa-plus"></i></a>
   <ul id="<%= taxonomy.id %>" class="collapse collapseItem">
     <% taxonomy.taxons.each do |taxon| %>
-      <% if taxon.leaf?  %>
+      <% if taxon.leaf? %>
         <li>
           <%= link_to potepan_category_path(taxon.id) do %>
             <i class="fa fa-caret-right" aria-hidden="true"></i>
