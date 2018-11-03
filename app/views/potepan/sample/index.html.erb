@@ -16,37 +16,42 @@
             <div class="row">
               <div class="col-md-6 hidden-sm hidden-xs">
                 <ul class="list-inline">
-            <li>
-              <%= link_to 'https://twitter.com/?lang=ja' do %>
-                <i class="fa fa-twitter"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'https://ja-jp.facebook.com/' do %>
-                <i class="fa fa-facebook"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'https://dribbble.com/' do %>
-                <i class="fa fa-dribbble"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'https://vimeo.com/jp' do %>
-                <i class="fa fa-vimeo"></i>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to 'https://www.tumblr.com/' do %>
-                <i class="fa fa-tumblr"></i>
-              <% end %>
-            </li>
+                  <li>
+                    <%= link_to 'https://twitter.com/?lang=ja' do %>
+                      <i class="fa fa-twitter"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://ja-jp.facebook.com/' do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://dribbble.com/' do %>
+                      <i class="fa fa-dribbble"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://vimeo.com/jp' do %>
+                      <i class="fa fa-vimeo"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://www.tumblr.com/' do %>
+                      <i class="fa fa-tumblr"></i>
+                    <% end %>
+                  </li>
                 </ul>
               </div>
               <div class="col-md-6 col-xs-12">
                 <ul class="list-inline pull-right">
-                  <li><span><a data-toggle="modal" href='#login'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create
-                        an account</a></span></li>
+                  <li>
+                    <span>
+                      <a data-toggle="modal" href='#login'>Log in</a>
+                      <small>or</small>
+                      <a data-toggle="modal" href='#signup'>Create an account</a>
+                    </span>
+                  </li>
                   <li class="dropdown searchBox">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -98,7 +103,6 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-main navbar-default" role="navigation">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -106,10 +110,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="javascript:void(0)">
-                <%= image_tag("logo.png") %></a>
+              <a class="navbar-brand" href="javascript:void(0)"><%= image_tag("logo.png") %></a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="javascript:void(0)">Home</a></li>
@@ -117,44 +119,7 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                     data-delay="300" data-close-others="true" aria-expanded="false">Shop</a>
                   <ul class="dropdown-menu row">
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>
-                          <%= link_to "CATEGORIES", "/potepan/categories/1" %>
-                        </li>
-                        <li>
-                          <%= link_to "Bags", "/potepan/categories/3" %>
-                        </li>
-                        <li>
-                          <%= link_to "Mugs", "/potepan/categories/4" %>
-                        </li>
-                        <li>
-                          <%= link_to "Clothing", "/potepan/categories/5" %>
-                        </li>
-                        <li>
-                          <%= link_to "Shirt", "/potepan/categories/6" %>
-                        </li>
-                        <li>
-                          <%= link_to "T-Shirt", "/potepan/categories/7" %>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li class="listHeading">
-                          <%= link_to "BRAND", "/potepan/categories/2" %>
-                        </li>
-                        <li>
-                          <%= link_to "Ruby", "/potepan/categories/8" %>
-                        </li>
-                        <li>
-                          <%= link_to "Apache", "/potepan/categories/9" %>
-                        </li>
-                        <li>
-                          <%= link_to "Rails", "/potepan/categories/10" %>
-                        </li>
-                      </ul>
-                    </li>
+                    <%= render partial: 'category_link', collection: @taxonomies, as: :taxonomy %>
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
                         <li>色から探す</li>

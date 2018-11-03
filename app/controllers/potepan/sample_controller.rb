@@ -1,5 +1,6 @@
 class Potepan::SampleController < ApplicationController
   def index
+    @taxonomies = Spree::Taxonomy.includes(:taxons)
     render :layout => false
   end
 
