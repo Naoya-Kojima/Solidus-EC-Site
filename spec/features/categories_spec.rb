@@ -40,7 +40,11 @@ RSpec.feature "Potepan::Categories", type: :feature do
     expect(page).to have_current_path(potepan_index_path)
   end
 
+<<<<<<< HEAD
   scenario "can visit category Bags" do
+=======
+  scenario "should be able to visit category Bags" do
+>>>>>>> 168790f411edc69614a81d37c7aa36a6eec66ae8
     click_on "Category"
     expect(page).to have_current_path(potepan_category_path(bag.id))
   end
