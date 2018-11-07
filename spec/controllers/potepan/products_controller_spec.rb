@@ -2,17 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Potepan::ProductsController, type: :controller do
   describe 'GET #show' do
-    #let(:taxon) { create(:taxon) }
-    let(:rails_bag) { create(:rails_bag) }
-    let!(:three_rails_bags) { create_list(:rails_bag, 3) }
-    # let!(:products_list) do
-    #   create_list(:product, 5) do |product|
-    #     product.taxons << taxon
-    #   end
-    # end
+    let!(:taxon) { create(:taxon) }
+    let!(:backpack) { create(:product, taxons: [taxon]) }
+    let!(:backpack_related_products) { create_list(:product, 8, taxons: [taxon]) }
 
     before do
-      get :show, params: { id: rails_bag.id }
+      get :show, params: { id: backpack.id }
     end
 
     it "returns http success" do
@@ -23,16 +18,16 @@ RSpec.describe Potepan::ProductsController, type: :controller do
       expect(response).to render_template :show
     end
 
-    # it "assigns @taxon" do
-    #   expect(assigns(:taxon)).to eq taxon
-    # end
-
     it "assigns @product" do
-      expect(assigns(:related_products)).to eq rails_bag
+      expect(assigns(:product)).to eq backpack
     end
 
     it "assigns @related_products" do
-      expect(assigns(:related_products)).to match_array three_rails_bags
+      expect(assigns(:related_products)).to match_array backpack_related_products
+    end
+
+    it "assigns @related_products size" do
+      expect(assigns(:related_products).size).to eq backpack_related_products.size
     end
   end
 end
