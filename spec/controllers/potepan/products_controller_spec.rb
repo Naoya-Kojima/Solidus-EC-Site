@@ -27,7 +27,11 @@ RSpec.describe Potepan::ProductsController, type: :controller do
     end
 
     it "assigns @related_products size" do
+<<<<<<< HEAD
       expect(assigns(:related_products).size).to eq backpack_related_products.size
+=======
+      expect(assigns(:related_products).count).to eq backpack_related_products.count
+>>>>>>> d822cfb5d2a1e5b5ea62accc1093fc78fa83bef3
     end
   end
 end
