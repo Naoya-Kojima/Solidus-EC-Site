@@ -35,13 +35,13 @@ RSpec.feature "Potepan::Products", type: :feature do
   scenario "can see a related_products" do
     visit potepan_product_path(potepan_cap.id)
     expect(page).to have_content potepan_cap.name
-    expect(page).to have_selector 'h5', text: "Ruby Cap"
+    expect(page).to have_selector ".productCaption", text: "Ruby Cap"
   end
 
   scenario "related_product count is 8" do
     visit potepan_product_path(potepan_cap.id)
     expect(page).to have_content potepan_cap.name
-    expect(page).to have_selector 'h5', text: "Ruby Cap", count: 8
+    expect(page).to have_selector ".productCaption", text: "Ruby Cap", count: 8
   end
 
   scenario "not show a related_products if related_product has no products" do
