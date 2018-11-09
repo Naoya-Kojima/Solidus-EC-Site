@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Potepan::SampleController, type: :controller do
   describe "GET #index" do
-    let(:taxonomies) { Spree::Taxonomy.includes(:taxons) }
+    let(:categories) { create_list(:taxonomy, 2) }
 
     before { get :index, params: {}, session: {} }
 
@@ -15,7 +15,7 @@ RSpec.describe Potepan::SampleController, type: :controller do
     end
 
     it "assigns @taxonomies" do
-      expect(assigns(:taxonomies)).to match_array taxonomies
+      expect(assigns(:taxonomies)).to match_array categories
     end
   end
 end

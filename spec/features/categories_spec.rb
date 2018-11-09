@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 RSpec.feature "Potepan::Categories", type: :feature do
-  given(:taxonomy) { create(:taxonomy, name: "Category") }
-  given(:super_bag) { taxonomy.root.children.create(name: "Super Bag") }
-  given(:bag) { taxonomy.root.children.create(name: "Bag") }
+  given(:category) { create(:taxonomy, name: "Category") }
+  given(:super_bag) { category.root.children.create(name: "Super Bag") }
+  given(:bag) { super_bag.children.create(name: "Bag") }
   given!(:product1) do
     create(:product, name: "Rails Bag") do |product|
       product.taxons << bag
