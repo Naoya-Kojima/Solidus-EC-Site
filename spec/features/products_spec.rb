@@ -2,11 +2,27 @@ require 'rails_helper'
 
 RSpec.feature "Potepan::Products", type: :feature do
   given(:cap_taxon) { create :taxon, name: "Cap" }
-  given(:potepan_cap) { create(:product, name: "Potepan Cap", taxons: [cap_taxon]) }
-  given(:tech_cap) { create(:product, name: "Tech Cap", taxons: [cap_taxon]) }
-  given!(:caps) { create_list(:product, 10, name: "Ruby Cap", taxons: [cap_taxon]) }
+  given(:potepan_cap) do
+    create(:product, name: "Potepan Cap") do |product|
+      product.taxons << cap_taxon
+    end
+  end
+  given(:tech_cap) do
+    create(:product, name: "Tech Cap") do |product|
+      product.taxons << cap_taxon
+    end
+  end
+  given!(:caps) do
+    create_list(:product, 10, name: "Ruby Cap") do |product|
+      product.taxons << cap_taxon
+    end
+  end
   given(:other_taxon) { create :taxon }
-  given(:shirt) { create :product, taxons: [other_taxon] }
+  given(:shirt) do
+    create(:product) do |product|
+      product.taxons << other_taxon
+    end
+  end
 
   background do
     visit potepan_product_path(potepan_cap.id)
