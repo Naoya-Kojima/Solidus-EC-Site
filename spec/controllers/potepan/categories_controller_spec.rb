@@ -2,20 +2,23 @@ require 'rails_helper'
 
 RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
-    let(:taxonomies) do
-      create_list(:taxonomy, 2) do |taxonomy|
-        taxon.taxonomy << taxonomy
+    let(:category) { create(:taxonomy) }
+    let(:bag) { category.root.children.create(name: "Bag") }
+    let(:rails_bags) do
+      create_list(:product, 5) do |product|
+        product.taxons << bag
       end
     end
-    let(:taxon) { create(:taxon) }
-    let(:products) do
+    let(:brand) { create(:taxonomy) }
+    let(:ruby) { brand.root.children.create(name: "Ruby") }
+    let(:ruby_caps) do
       create_list(:product, 5) do |product|
-        product.taxons << taxon
+        product.taxons << ruby
       end
     end
 
     before do
-      get :show, params: { id: taxon.id }
+      get :show, params: { id: bag.id }
     end
 
     it "returns http success" do
@@ -27,15 +30,19 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
     end
 
     it "assigns @taxonomies" do
-      expect(assigns(:taxonomies)).to match_array taxon.taxonomy
+      expect(assigns(:taxonomies)).to match_array category
     end
 
     it "assigns @taxon" do
-      expect(assigns(:taxon)).to eq taxon
+      expect(assigns(:taxon)).to eq bag
     end
 
     it "assigns @products" do
-      expect(assigns(:products)).to eq products
+      expect(assigns(:products)).to match_array rails_bags
+    end
+
+    it "not assigns other category @products " do
+      expect(assigns(:products)).not_to match_array ruby_caps
     end
   end
 end
