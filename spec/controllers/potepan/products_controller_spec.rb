@@ -3,16 +3,8 @@ require 'rails_helper'
 RSpec.describe Potepan::ProductsController, type: :controller do
   describe 'GET #show' do
     let(:bag) { create(:taxon) }
-    let(:backpack) do
-      create(:product) do |product|
-        product.taxons << bag
-      end
-    end
-    let!(:related_products) do
-      create_list(:product, 8) do |product|
-        product.taxons << bag
-      end
-    end
+    let(:backpack) { create(:product, taxons: [bag]) }
+    let!(:related_products) { create_list(:product, 8, taxons: [bag]) }
 
     before do
       get :show, params: { id: backpack.id }
