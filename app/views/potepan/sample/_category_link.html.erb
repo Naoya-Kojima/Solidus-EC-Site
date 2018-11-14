@@ -6,12 +6,10 @@
       <% end %>
       <ul class="list-unstyled">
         <li>
-          <% taxonomy.taxons.each do |taxon| %>
-            <% if taxon.leaf? %>
-              <%= link_to potepan_category_path(taxon.id) do %>
-                <i class="fa fa-caret-right" aria-hidden="true"></i>
-                <%= taxon.name %><span>(%= taxon.products.size %>)</span>
-              <% end %>
+          <% taxonomy.taxons.leaves.each do |taxon| %>
+            <%= link_to potepan_category_path(taxon.id) do %>
+              <i class="fa fa-caret-right" aria-hidden="true"></i>
+              <%= taxon.name %><span>(<%= taxon.products.count %>)</span>
             <% end %>
           <% end %>
         </li>

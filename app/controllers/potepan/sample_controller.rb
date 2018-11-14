@@ -1,6 +1,7 @@
 class Potepan::SampleController < ApplicationController
+  before_action :product_taxonomy
   def index
-    @taxonomies = Spree::Taxonomy.includes(:taxons)
+    @taxonomies = Spree::Taxonomy.all
     render :layout => false
   end
 

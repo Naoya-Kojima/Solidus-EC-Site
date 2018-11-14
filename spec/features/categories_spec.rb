@@ -24,13 +24,19 @@ RSpec.feature "Potepan::Categories", type: :feature do
     within(".productsContent") { expect(page).to have_content "Ruby Bag" }
   end
 
-  scenario "can see mutually related categories and product page" do
+  scenario "can see product detail page" do
     click_on "Rails Bag"
     expect(page).to have_current_path(potepan_product_path(product1.id))
-    click_on "一覧ページへ戻る"
-    expect(page).to have_current_path(potepan_category_path(bag.id))
+    visit potepan_category_path(bag.id)
     click_on "Ruby Bag"
     expect(page).to have_current_path(potepan_product_path(product2.id))
+  end
+
+  scenario "can return categories page" do
+    visit potepan_product_path(product1.id)
+    click_on "一覧ページへ戻る"
+    expect(page).to have_current_path(potepan_category_path(bag.id))
+    visit potepan_product_path(product2.id)
     click_on "一覧ページへ戻る"
     expect(page).to have_current_path(potepan_category_path(bag.id))
   end

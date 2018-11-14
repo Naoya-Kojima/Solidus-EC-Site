@@ -8,7 +8,7 @@
 
 <body>
   <div class="main-wrapper">
-    <%= render 'layouts/header' %>
+    <%= render partial: 'layouts/header', locals: { product: @product , taxonomy: @taxonomy}%>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= render 'layouts/copyright' %>

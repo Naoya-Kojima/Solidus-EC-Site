@@ -1,4 +1,5 @@
 class Potepan::ProductsController < ApplicationController
+  before_action :product_taxonomy
   RELATED_PRODUCTS_LIMIT = 8
 
   def show
