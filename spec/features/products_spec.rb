@@ -16,7 +16,6 @@ RSpec.feature "Potepan::Products", type: :feature do
   end
 
   scenario "can see a products" do
-    visit potepan_product_path(potepan_cap.id)
     expect(page).to have_content "一覧ページへ戻る"
     expect(page).to have_content potepan_cap.name
     expect(page).to have_content potepan_cap.price
@@ -36,13 +35,11 @@ RSpec.feature "Potepan::Products", type: :feature do
   end
 
   scenario "can see a related_products" do
-    visit potepan_product_path(potepan_cap.id)
     expect(page).to have_content potepan_cap.name
     expect(page).to have_selector ".productBox", text: "Ruby Cap"
   end
 
   scenario "related_product count is 8" do
-    visit potepan_product_path(potepan_cap.id)
     expect(page).to have_content potepan_cap.name
     expect(page).to have_selector ".productBox", count: 8
   end
