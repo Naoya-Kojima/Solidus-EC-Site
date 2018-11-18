@@ -48,7 +48,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
           end
         end
 
-        context "related_products have 9 products " do
+        context "when related_products have 9 products " do
           let!(:related_products_2) { create_list(:product, 2, taxons: [bag]) }
 
           it "assigns @related_products size is 9" do
