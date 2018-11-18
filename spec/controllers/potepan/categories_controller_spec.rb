@@ -2,20 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
-    let!(:category) { create(:taxonomy, name: "Category") }
-    let!(:bag) { category.root.children.create(name: "Bag") }
-    let!(:rails_bags) do
-      create_list(:product, 5) do |product|
-        product.taxons << bag
-      end
-    end
-    let!(:brand) { create(:taxonomy, name: "Brand") }
-    let!(:ruby) { brand.root.children.create(name: "Ruby") }
-    let!(:ruby_caps) do
-      create_list(:product, 5) do |product|
-        product.taxons << ruby
-      end
-    end
+    let(:category) { create(:taxonomy, name: "Category") }
+    let(:bag) { create(:taxon, name: "Bag", taxonomy: category, parent: category.root) }
+    let!(:rails_bags) { create(:product, taxons: [bag]) }
+    let(:brand) { create(:taxonomy, name: "Brand") }
+    let(:ruby) { create(:taxon, name: "Ruby", taxonomy: brand, parent: brand.root) }
+    let!(:ruby_caps) { create(:product, taxons: [ruby]) }
 
     before do
       get :show, params: { id: bag.id }
