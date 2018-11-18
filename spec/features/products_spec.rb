@@ -16,10 +16,10 @@ RSpec.feature "Potepan::Products", type: :feature do
   end
 
   scenario "can see a products" do
-    expect(page).to have_content "一覧ページへ戻る"
-    expect(page).to have_content potepan_cap.name
-    expect(page).to have_content potepan_cap.price
-    expect(page).to have_content potepan_cap.description
+    expect(page).to have_selector "div.singleProduct", text: "一覧ページへ戻る"
+    expect(page).to have_selector "div.singleProduct", text: potepan_cap.name
+    expect(page).to have_selector "div.singleProduct", text: potepan_cap.price
+    expect(page).to have_selector "div.singleProduct", text: potepan_cap.description
   end
 
   scenario "can see mutually related categories and product page" do
@@ -35,18 +35,18 @@ RSpec.feature "Potepan::Products", type: :feature do
   end
 
   scenario "can see a related_products" do
-    expect(page).to have_content potepan_cap.name
-    expect(page).to have_selector ".productBox", text: "Ruby Cap"
+    expect(page).to have_selector "div.singleProduct", text: potepan_cap.name
+    expect(page).to have_selector "div.productBox", text: "Ruby Cap"
   end
 
   scenario "related_product count is 8" do
-    expect(page).to have_content potepan_cap.name
-    expect(page).to have_selector ".productBox", count: 8
+    expect(page).to have_selector "div.singleProduct", text: potepan_cap.name
+    expect(page).to have_selector "div.productBox", count: 8
   end
 
   scenario "not show a related_products if related_product has no products" do
     visit potepan_product_path(shirt.id)
-    expect(page).to have_content shirt.name
-    expect(page).not_to have_selector ".productBox"
+    expect(page).to have_selector "div.singleProduct", text: shirt.name
+    expect(page).not_to have_selector "div.productBox"
   end
 end

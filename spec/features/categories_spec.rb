@@ -12,8 +12,8 @@ RSpec.feature "Potepan::Categories", type: :feature do
   end
 
   scenario "can see a taxon's products" do
-    within(".productsContent") { expect(page).to have_content product1.name }
-    within(".productsContent") { expect(page).to have_content product2.name }
+    within("section.productsContent") { expect(page).to have_content product1.name }
+    within("section.productsContent") { expect(page).to have_content product2.name }
   end
 
   scenario "can see product detail page" do
