@@ -21,11 +21,11 @@ RSpec.describe Potepan::ProductsController, type: :controller do
         expect(response).to render_template :show
       end
 
-      describe "@related_products" do
-        it "assigns @product" do
-          expect(assigns(:product)).to eq backpack
-        end
+      it "assigns @product" do
+        expect(assigns(:product)).to eq backpack
+      end
 
+      describe "@related_products" do
         it "assigns @related_products" do
           expect(assigns(:related_products)).to match_array related_products
         end
@@ -51,7 +51,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
         context "when related_products have 9 products " do
           let!(:related_products_2) { create_list(:product, 2, taxons: [bag]) }
 
-          it "assigns @related_products size is 9" do
+          it "assigns @related_products size is 9 -> 8(RELATED_PRODUCTS_LIMIT = 8) " do
             expect(assigns(:related_products).size).to eq 8
           end
         end
