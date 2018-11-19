@@ -109,7 +109,7 @@
                 <ul class="list-unstyled">
                   <li>Products Grid View</li>
                   <li>
-                    <%= link_to "Categories", potepan_category_path(taxonomy.id) %>
+                    <%= link_to "Categories", potepan_category_path(Spree::Taxon.roots.first.id) %>
                   </li>
                   <li>
                     <%= link_to "Products Sidebar Right", "#" %>
@@ -129,14 +129,14 @@
                 <ul class="list-unstyled">
                   <li>Products List View</li>
                   <li>
-                    <%= link_to "Categories", potepan_category_path(taxonomy.id) %> <%# FIXME: ここをList表示できるよう修正 %>
+                    <%= link_to "Categories", potepan_category_path(Spree::Taxon.roots.first.id) %> <%# FIXME: ここをList表示できるよう修正 %>
                   </li>
                   <li>
                     <%= link_to "Products Sidebar Right", "#" %>
                   </li>
                   <li class="listHeading">Others</li>
                   <li class="active">
-                    <%= link_to 'Product Details', potepan_product_path(product.id) %>
+                    <%= link_to 'Product Details', potepan_product_path(Spree::Product.first.id) %>
                   </li>
                   <li>
                     <%= link_to 'Cart Page', potepan_cart_page_path %>

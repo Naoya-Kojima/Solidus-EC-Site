@@ -1,5 +1,4 @@
 class Potepan::CategoriesController < ApplicationController
-  before_action :product_taxonomy
   def show
     @taxon = Spree::Taxon.find(params[:id])
     @taxonomies = Spree::Taxonomy.all
