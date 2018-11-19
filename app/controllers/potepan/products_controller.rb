@@ -1,7 +1,4 @@
 class Potepan::ProductsController < ApplicationController
-  before_action :product_taxonomy
-  RELATED_PRODUCTS_LIMIT = 8
-
   def show
     @product = Spree::Product.find(params[:id])
     @images = @product.images
