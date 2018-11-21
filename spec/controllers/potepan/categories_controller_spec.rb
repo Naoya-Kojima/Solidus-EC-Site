@@ -34,7 +34,7 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
     end
 
     it "not assigns other category @products " do
-      expect(assigns(:products)).not_to match_array ruby_caps
+      expect(assigns(:products)).not_to eq ruby_caps
     end
   end
 end
