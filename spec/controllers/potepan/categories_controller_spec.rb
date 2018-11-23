@@ -4,10 +4,10 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
   describe "GET #show" do
     let(:category) { create(:taxonomy, name: "Category") }
     let(:bag) { create(:taxon, name: "Bag", taxonomy: category, parent: category.root) }
-    let!(:rails_bags) { create(:product, taxons: [bag]) }
+    let!(:rails_bag) { create(:product, taxons: [bag]) }
     let(:brand) { create(:taxonomy, name: "Brand") }
     let(:ruby) { create(:taxon, name: "Ruby", taxonomy: brand, parent: brand.root) }
-    let!(:ruby_caps) { create(:product, taxons: [ruby]) }
+    let!(:ruby_cap) { create(:product, taxons: [ruby]) }
 
     before do
       get :show, params: { id: bag.id }
@@ -30,11 +30,11 @@ RSpec.describe Potepan::CategoriesController, type: :controller do
     end
 
     it "assigns @products" do
-      expect(assigns(:products)).to match_array rails_bags
+      expect(assigns(:products)).to match_array rails_bag
     end
 
-    it "not assigns other category @products " do
-      expect(assigns(:products)).not_to eq ruby_caps
+    it "not assigns other category to @products " do
+      expect(assigns(:products)).not_to include ruby_cap
     end
   end
 end
