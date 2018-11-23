@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Potepan::SampleController, type: :controller do
   describe "GET #index" do
-    let(:categories) { create_list(:taxonomy, 2) }
+    let(:categories) { create(:taxonomy) }
 
     before { get :index }
 
