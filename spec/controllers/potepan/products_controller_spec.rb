@@ -23,7 +23,7 @@ RSpec.describe Potepan::ProductsController, type: :controller do
         expect(response).to render_template :show
       end
 
-      it "@product(model instance) assigned to view" do
+      it "assigns a requested product to a @product" do
         expect(assigns(:product)).to eq backpack
       end
 
