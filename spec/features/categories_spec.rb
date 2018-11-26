@@ -4,8 +4,10 @@ RSpec.feature "Potepan::Categories", type: :feature do
   given(:category) { create(:taxonomy, name: "Category") }
   given(:super_bag) { create(:taxon, name: "Super Bag", taxonomy: category, parent: category.root) }
   given(:bag) { create(:taxon, name: "Bag", taxonomy: category, parent: super_bag) }
+  given(:tote) { create(:taxon, name: "Tote", taxonomy: category, parent: super_bag) }
   given!(:product1) { create(:product, name: "Rails Bag", taxons: [bag]) }
   given!(:product2) { create(:product, name: "Ruby Bag", taxons: [bag]) }
+  given!(:product3) { create(:product, name: "Apache Mag", taxons: [tote]) }
 
   background do
     visit potepan_category_path(bag.id)
@@ -38,8 +40,9 @@ RSpec.feature "Potepan::Categories", type: :feature do
     expect(page).to have_current_path(potepan_index_path)
   end
 
-  scenario "can visit category Bags" do
+  scenario "can visit other taxon" do
     click_on "Category"
-    expect(page).to have_current_path(potepan_category_path(bag.id))
+    click_on "Tote"
+    expect(page).to have_current_path(potepan_category_path(tote.id))
   end
 end
