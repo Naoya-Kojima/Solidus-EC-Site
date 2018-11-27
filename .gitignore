@@ -196,5 +196,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
-#手動追加ファイル
+# 手動追加ファイル
 .idea/
