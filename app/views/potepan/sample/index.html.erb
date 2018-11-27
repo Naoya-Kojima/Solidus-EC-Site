@@ -16,17 +16,42 @@
             <div class="row">
               <div class="col-md-6 hidden-sm hidden-xs">
                 <ul class="list-inline">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                  <li><a href="#"><i class="fa fa-vimeo"></i></a></li>
-                  <li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                  <li>
+                    <%= link_to 'https://twitter.com/?lang=ja' do %>
+                      <i class="fa fa-twitter"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://ja-jp.facebook.com/' do %>
+                      <i class="fa fa-facebook"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://dribbble.com/' do %>
+                      <i class="fa fa-dribbble"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://vimeo.com/jp' do %>
+                      <i class="fa fa-vimeo"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to 'https://www.tumblr.com/' do %>
+                      <i class="fa fa-tumblr"></i>
+                    <% end %>
+                  </li>
                 </ul>
               </div>
               <div class="col-md-6 col-xs-12">
                 <ul class="list-inline pull-right">
-                  <li><span><a data-toggle="modal" href='#login'>Log in</a><small>or</small><a data-toggle="modal" href='#signup'>Create
-                        an account</a></span></li>
+                  <li>
+                    <span>
+                      <a data-toggle="modal" href='#login'>Log in</a>
+                      <small>or</small>
+                      <a data-toggle="modal" href='#signup'>Create an account</a>
+                    </span>
+                  </li>
                   <li class="dropdown searchBox">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-search"></i></a>
                     <ul class="dropdown-menu dropdown-menu-right">
@@ -78,7 +103,6 @@
         <!-- NAVBAR -->
         <nav class="navbar navbar-main navbar-default" role="navigation">
           <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -86,10 +110,8 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="javascript:void(0)">
-                <%= image_tag("logo.png") %></a>
+              <a class="navbar-brand" href="javascript:void(0)"><%= image_tag("logo.png") %></a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="javascript:void(0)">Home</a></li>
@@ -97,49 +119,25 @@
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown"
                     data-delay="300" data-close-others="true" aria-expanded="false">Shop</a>
                   <ul class="dropdown-menu row">
+                    <%= render partial: 'category_link', collection: @taxonomies, as: :taxonomy %>
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
-                        <li>レディース</li>
-                        <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
-                        <!-- <li><a href="product-grid-right-sidebar.html">Products Sidebar Right</a></li>
-                        <li><a href="product-grid-3-col-filter.html">Products 3 Columns V1</a></li>
-                        <li><a href="product-grid-3-col.html">Products 3 Columns V2</a></li>
-                        <li><a href="product-grid-4-col.html">Products 4 Columns</a></li> -->
+                        <li>色から探す</li>
+                        <li><a href="product_grid_left_sidebar.html">ブラック</a></li>
+                        <li><a href="product_grid_left_sidebar.html">ホワイト</a></li>
+                        <li><a href="product_grid_left_sidebar.html">レッド</a></li>
+                        <li><a href="product_grid_left_sidebar.html">ブルー</a></li>
+                        <li><a href="product_grid_left_sidebar.html">オレンジ</a></li>
                       </ul>
                     </li>
                     <li class="col-sm-3 col-xs-12">
                       <ul class="list-unstyled">
-                        <!-- <li>Products List View</li>
-                        <li><a href="product-list-left-sidebar.html">Products Sidebar Left</a></li>
-                        <li><a href="product-list-right-sidebar.html">Products Sidebar Right</a></li> -->
-                        <li class="listHeading">メンズ</li>
-                        <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
+                        <li>サイズから探す</li>
+                        <li><a href="product_grid_left_sidebar.html">S</a></li>
+                        <li><a href="product_grid_left_sidebar.html">M</a></li>
+                        <li><a href="product_grid_left_sidebar.html">L</a></li>
+                        <li><a href="product_grid_left_sidebar.html">XL</a></li>
                       </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>キッズ</li>
-                        <li><a href="product_grid_left_sidebar.html">トップス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">アウター</a></li>
-                        <li><a href="product_grid_left_sidebar.html">ボトムス</a></li>
-                        <li><a href="product_grid_left_sidebar.html">靴</a></li>
-                      </ul>
-                    </li>
-                    <li class="col-sm-3 col-xs-12">
-                      <ul class="list-unstyled">
-                        <li>アクセサリー</li>
-                        <li><a href="product_grid_left_sidebar.html">モバイルケース・アクセサリー</a></li>
-                        <li><a href="product_grid_left_sidebar.html">財布・革小物</a></li>
-                        <li><a href="product_grid_left_sidebar.html">腕時計</a></li>
-                        <li><a href="product_grid_left_sidebar.html">帽子</a></li>
-                      </ul>
-                      <!--   <a href="#" class="menu-photo"><img src="img/menu-photo.jpg" alt="menu-img"></a> -->
                     </li>
                   </ul>
                 </li>
@@ -148,41 +146,19 @@
                     aria-haspopup="true" aria-expanded="false">About US</a>
                   <ul class="dropdown-menu dropdown-menu-left">
                     <li><a href="about_us.html">About Us</a></li>
-                    <!-- <li><a href="signup.html">Register</a></li>
-                    <li><a href="signup-login.html">Register or Login</a></li>
-                    <li><a href="login.html">Login</a></li> -->
-                    <!-- <li><a href="lost-password.html">Password Recovery</a></li> -->
                     <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                    <!-- <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li> -->
-                    <!-- <li><a href="404.html">404 Not Found</a></li> -->
-                    <!--<li><a href="coming-soon.html">Coming Soon</a></li>-->
                   </ul>
                 </li>
                 <li class="dropdown">
                   <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
                     aria-haspopup="true" aria-expanded="false">blog</a>
                   <ul class="dropdown-menu dropdown-menu-right">
-                    <!-- <li><a href="blog-right-sidebar.html">Right Sidebar</a></li> -->
                     <li><a href="blog_left_sidebar.html">Left Sidebar</a></li>
-                    <!-- <li><a href="blog-fullwidth.html">Full Width</a></li>
-                    <li><a href="blog-single-fullwidth.html">Single Post</a></li>
-                    <li><a href="blog-single-right-sidebar.html">Single Right Sidebar</a></li> -->
                     <li><a href="blog_single_left_sidebar.html">Single Left Sidebar</a></li>
                   </ul>
                 </li>
-                <!--  <li class="dropdown">
-                  <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account</a>
-                  <ul class="dropdown-menu dropdown-menu-right">
-                    <li><a href="account-dashboard.html">Dashboard</a></li>
-                    <li><a href="account-profile.html">Profile</a></li>
-                    <li><a href="account-all-orders.html">All Orders</a></li>
-                    <li><a href="account-single-order.html">Single Order</a></li>
-                    <li><a href="account-wishlist.html">Wishlist</a></li>
-                    <li><a href="account-address.html">Address</a></li>
-                  </ul>
-                </li> -->
               </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
           </div>
         </nav>
       </div>

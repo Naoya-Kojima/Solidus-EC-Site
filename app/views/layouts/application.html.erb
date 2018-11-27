@@ -2,14 +2,13 @@
 <html>
 
 <head>
-  <!-- SITE TITTLE -->
   <%= render 'layouts/head' %>
   <%= render 'layouts/shim' %>
 </head>
 
 <body>
   <div class="main-wrapper">
-    <%= render 'layouts/header' %>
+    <%= render partial: 'layouts/header' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= render 'layouts/copyright' %>
